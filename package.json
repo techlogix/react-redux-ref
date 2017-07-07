@@ -1,0 +1,20 @@
+{
+  "name": "psadmin",
+  "version": "1.0.0",
+  "description": "Sood test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sood",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-open": "^2.0.0",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {
+    "gulp-webserver": "^0.9.1"
+  }
+}
