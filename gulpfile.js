@@ -4,7 +4,7 @@
 
  * https://gulpjs.org/recipes/
  * https://www.npmjs.com/package/eslint-config-airbnb
- * (using latest packages)
+ * (using latest packagesgi)
  */
 
 var gulp = require ('gulp');

@@ -8,20 +8,15 @@
   },
   "author": "Sood",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "browserify": "^14.4.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-eslint": "^4.0.0",
-    "gulp-open": "^2.0.0",
-    "http-server": "^0.10.0",
-    "jquery": "^3.2.1",
-    "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0"
-  },
   "devDependencies": {
-    "gulp-webserver": "^0.9.1"
+    "axios": "^0.9.1",
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-2": "^6.3.13",
+    "react": "15.1.0",
+    "react-dom": "15.1.0",
+    "react-router": "^2.6.0"
   }
 }
