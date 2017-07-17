@@ -24,9 +24,9 @@ let App0 = React.createClass({
 const App1 = React.createClass({
     render: function(){
         return (
-        <div>        
-            <h1>Hello JSX</h1>
-            <User name="Brad Westfall" twitter="bradwestfall"/>
+        <div> 
+               <h1>{this.props.foo}</h1>       
+            <User foo={this.props.foo} name="Brad Westfall" twitter="bradwestfall"/>
             <User name="Sood" twitter="techlogix"/>
         </div>
     )
@@ -37,7 +37,7 @@ let User = React.createClass({
     render: function(){
         return (
         <div>
-            {this.props.name}: <a href={'http://twitter.com/' + this.props.twitter}> Twitter </a>
+         {this.props.foo}   {this.props.name}: <a href={'http://twitter.com/' + this.props.twitter}> Twitter </a>
 
         </div>
 
@@ -45,4 +45,4 @@ let User = React.createClass({
     }
 })
 
-ReactDOM.render(<App1 />, document.getElementById('root'))
+ReactDOM.render(<App1 foo="Hello JSX, Props"/>, document.getElementById('root'))
