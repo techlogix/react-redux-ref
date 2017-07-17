@@ -28,6 +28,7 @@ const App1 = React.createClass({
                <h1>{this.props.foo}</h1>       
             <User foo={this.props.foo} name="Brad Westfall" twitter="bradwestfall"/>
             <User name="Sood" twitter="techlogix"/>
+            <User name ="Tanya"/>
         </div>
     )
     }
@@ -35,13 +36,11 @@ const App1 = React.createClass({
 
 let User = React.createClass({
     render: function(){
-        return (
-        <div>
-         {this.props.foo}   {this.props.name}: <a href={'http://twitter.com/' + this.props.twitter}> Twitter </a>
-
-        </div>
-
-        )
+            let twitter=(this.props.twitter)? this.renderTwitterLink(this.props.twitter):null
+                return <div>{this.props.name} {twitter}</div>
+              },
+    renderTwitterLink: function(twitterId){
+        return <a href={'http://twitter.com/' + twitterId}> twitter</a>
     }
 })
 

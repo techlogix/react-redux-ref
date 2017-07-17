@@ -10489,7 +10489,8 @@ var App1 = _react2.default.createClass({
                 this.props.foo
             ),
             _react2.default.createElement(User, { foo: this.props.foo, name: 'Brad Westfall', twitter: 'bradwestfall' }),
-            _react2.default.createElement(User, { name: 'Sood', twitter: 'techlogix' })
+            _react2.default.createElement(User, { name: 'Sood', twitter: 'techlogix' }),
+            _react2.default.createElement(User, { name: 'Tanya' })
         );
     }
 });
@@ -10498,18 +10499,20 @@ var User = _react2.default.createClass({
     displayName: 'User',
 
     render: function render() {
+        var twitter = this.props.twitter ? this.renderTwitterLink(this.props.twitter) : null;
         return _react2.default.createElement(
             'div',
             null,
-            this.props.foo,
-            '   ',
             this.props.name,
-            ': ',
-            _react2.default.createElement(
-                'a',
-                { href: 'http://twitter.com/' + this.props.twitter },
-                ' Twitter '
-            )
+            ' ',
+            twitter
+        );
+    },
+    renderTwitterLink: function renderTwitterLink(twitterId) {
+        return _react2.default.createElement(
+            'a',
+            { href: 'http://twitter.com/' + twitterId },
+            ' twitter'
         );
     }
 });
