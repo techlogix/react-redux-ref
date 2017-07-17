@@ -4,15 +4,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let Home = React.createClass({
-    render: function ()
-    {
-        return (
-            <div className="jumbotron">
-                <h1>PluralSight Administration</h1>
-                <p>React, React Router and Flux for ultra-responsibe webapps.</p>
-            </div>
-        );
+    render: function(){
+        return <h1>Hello JSX Component</h1>
     }
-});
+})
 
-ReactDom.render(<Home />, document.getElementById('app'))
+exports.App = Home.render;
