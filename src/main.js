@@ -4,6 +4,9 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Counter from './components/counter'
+import User from './components/user'
+import axis from 'axios'
 //import App from './components/homePage'
 
 //$ = jQuery = require('jquery');// needs to be in the global namespace by bootstrap
@@ -20,28 +23,34 @@ let App0 = React.createClass({
 
 /**
  * React Component with JSX
+ * Before using state object - you should initialize the variables for the compnents.
  */
-const App1 = React.createClass({
+const App = React.createClass({
+    getInitialState: function(){
+        return {users:[]}
+    },
+    componentDidMount: function(){
+        axis.get('http://swapi.co/api/people').then(response =>{
+            console.log(response.data.results)
+            this.setState({users:response.data.results})
+        })
+    },
     render: function(){
+        console.log(this.state.users)
         return (
         <div> 
-               <h1>{this.props.foo}</h1>       
-            <User foo={this.props.foo} name="Brad Westfall" twitter="bradwestfall"/>
-            <User name="Sood" twitter="techlogix"/>
-            <User name ="Tanya"/>
+            <h1>{this.props.foo}</h1> 
+           {
+            this.state.users.map(user =>{
+                return <User name={user.name} key={user.name}/>
+            })
+          
+           }
+         
         </div>
+          
     )
     }
 })
 
-let User = React.createClass({
-    render: function(){
-            let twitter=(this.props.twitter)? this.renderTwitterLink(this.props.twitter):null
-                return <div>{this.props.name} {twitter}</div>
-              },
-    renderTwitterLink: function(twitterId){
-        return <a href={'http://twitter.com/' + twitterId}> twitter</a>
-    }
-})
-
-ReactDOM.render(<App1 foo="Hello JSX, Props"/>, document.getElementById('root'))
+ReactDOM.render(<App foo="Star Wars Characters"/>, document.getElementById('root'))
