@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Couter from './counter'
+import Couter from './Counter'
+
 /**
- * This is a stateless user. However active is stateful.
  * Notice that we have made this a const (best practice)
  * you must call setState with a json for state.
  * getInitialState is a lifecycle method - it will return a json object
@@ -10,16 +10,15 @@ import Couter from './counter'
 const User = React.createClass({
     getInitialState: function(){
         return {
-            active: false
+            active: true
         }
     },
-    render: function(name, twitter){
-            let twitter=(props.twitter)? this.renderTwitterLink(props.twitter):null
+    render: function(){
+            let twitter=(this.props.twitter)? this.renderTwitterLink(this.props.twitter):null
             let activeText = (this.state.active)?'active':'inactive'
             return (
-                
                 <div className='user'>
-                    <div>{props.name} {twitter}</div>
+                    <div>{this.props.name} {twitter}</div>
                     <div>{activeText} </div>
                     <button onClick={this.toggleActive}>Toggle </button>
                 </div>

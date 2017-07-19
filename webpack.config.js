@@ -1,5 +1,5 @@
 module.exports = {
-  entry: {['./src/main.js','./src/components/\.js$/']},
+  entry: './src/main.js',
   output: {
     filename: "./dist/scripts/bundle.js",
     sourceMapFilename: "./dist/scripts/bundle.map"
